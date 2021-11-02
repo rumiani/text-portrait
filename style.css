@@ -4,18 +4,64 @@ body{
 .input{
     background-color: black;
     text-align: center;
+    padding: 5px;
 }
-  .inputText{
-      resize: none;
+.choose{
     margin: 0 auto;
-    width: 90%;
-    font-size: 18px;
+    /* background-color: red; */
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    position: relative;
+}
+.go{
+    cursor: pointer;
+    background-color: lightgreen;
+    height: 70px;
+    width: 50px;
+    border-radius: 5px;
+    position: absolute;
+    float: right;
+    top: 10px;
+    right: 5px;
+    transition: 0.5s;
+    text-align: center;
+}
+.go:hover{
+    font-size: larger;
 }
 .inputPic{
+    width: 180px;
     cursor: pointer;
     padding: 5px;
     background-color: royalblue;
+    margin: 10px 0;
+    height: 30px;
+    border-radius: 5px;
+}
+.range{
+    width: 150px;
+    height: 50pxs;
+    color: red;
+}
+.rangNum{
+    color: white;
+    
+}
+.inputText{
+    resize: none;
     margin: 0 auto;
+    width: 300px;
+    font-size: 18px;
+    height:20px;
+    transition: 1s;
+}
+.inputText:focus{
+    box-shadow:2px 2px 2px blue;
+    border:none;
+    padding: 10px;
+    height: 200px !important;
 }
 section{
   height:600px;
@@ -39,29 +85,24 @@ section{
     word-break: break-all;
     text-align: center;
     overflow:hidden;
+    background-position:center !important;
     /* background: url('./canim.jpg') 100% 100% no-repeat; */
 }
 .build{
+    background-size:contain cover !important;
     -webkit-background-clip:text !important;
     color:transparent !important;
     filter:contrast(1) !important;
-    background-position:center !important;
     text-align:justify !important;
   }
-.go{
-    cursor: pointer;
-    background-color: lightgreen;
-    padding: 5px;
-    border-radius: 5px;
-}
 .go:hover{
     background-color: green;
 }
-  .rangNum{
-      color: white;
-  }
 @media(max-width:400px){
     p{
         width:95% ;
+    }
+    .inputText{
+        width: 90%;
     }
 }

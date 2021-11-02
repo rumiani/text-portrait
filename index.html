@@ -8,16 +8,18 @@
     <title>Text-Portrait</title>
 </head>
 <body>
+    <div class="input">
+        <div class="choose">
+            <input accept="image/*" type="file" class="inputPic" required>
+            <input class='range' type="range" class="range" title='Font Size (5-30 px)' min="5" max="30" > <span class="rangNum"></span>
+            <button class="go">Go</button>
+        </div>
+        <br>
+        <textarea placeholder="Enter a text here .." name="textarea" class="inputText" resize='none' id=""  required></textarea>
+    </div>
     <section>
         <p class="output"></p>
     </section>
-    <div class="input">
-        <input accept="image/*" type="file" class="inputPic">
-        <button class="go">Go</button>
-        <input type="range" class="range" title='Font Size (5-30 px)' min="5" max="30" > <span class="rangNum"></span>
-        <br>
-        <textarea placeholder="Enter a text here .." name="textarea" class="inputText" resize='none' id="" cols="30" rows="10"></textarea>
-    </div>
     <script src="app.js"></script>
 </body>
 </html>

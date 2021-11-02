@@ -1,4 +1,6 @@
 let output = document.querySelector('.output');
+let textInput = document.querySelector('.inputText')
+let choosePic = false
 let photo = new Image();
 let h = 600;
 let w = 400;
@@ -9,11 +11,21 @@ document.querySelector('.go').addEventListener('click',()=>{
     let inputText = document.querySelector('.inputText').value;
     inputText = inputText.trim()
     
-    // if(inputText.length<1) {
-    //     alert('You should enter a text')
-    //     document.querySelector('.inputText').value = ''
-    //     return;
-    // }
+    if(!choosePic) {
+        alert('You should choose photo from your device!')
+        document.querySelector('.inputPic').focus()
+        return;
+    }
+    if(inputText.length<1) {
+        alert('You should enter a text')
+        textInput.value = ''
+        textInput.focus()
+        return;
+    }
+
+    if(!URL.createObjectURL(document.querySelector('.inputPic').files[0])){
+        return alert('not ok')
+    }
     let range = document.querySelector('.range').value
     output.style.fontSize = `${range}px`
 
@@ -42,11 +54,17 @@ document.querySelector('.range').addEventListener('change',()=>{
     console.log(output.innerHTML.length);
 })
 
-
-
-
-
 document.querySelector('.inputPic').addEventListener('change',()=>{
     let src = URL.createObjectURL(document.querySelector('.inputPic').files[0]);
-    output.style.background = `url(${src}) 100% 100% no-repeat`
+    output.style.background = `url(${src}) 100% 100% / contain  no-repeat`
+document.querySelector('.inputPic').style.background = 'green'
+choosePic = true
+})
+document.body.addEventListener('click',(e)=>{
+    if(e.target.classList.contains('inputText')){
+        textInput.style.height = '200px'
+    }
+    else{
+        textInput.style.height = '20px'
+    }
 })
