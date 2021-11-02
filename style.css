@@ -44,6 +44,7 @@ body{
     width: 150px;
     height: 50pxs;
     color: red;
+    /* margin: 20px 0; */
 }
 .rangNum{
     color: white;
@@ -99,6 +100,9 @@ section{
     background-color: green;
 }
 @media(max-width:400px){
+    .go{
+        width: 20%;
+    }
     p{
         width:95% ;
     }
@@ -107,6 +111,12 @@ section{
     }
     .choose{
         width: 95%;
+    }
+    .inputPic{
+        width: 70%;
+    }
+    .range{
+        width: 60%;
     }
     p{
         width: 95%;
