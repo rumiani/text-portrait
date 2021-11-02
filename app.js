@@ -32,7 +32,7 @@ function goHandler (){
     output.style.fontSize = `${range}px`
 
     // output.classList.add('addBG')
-    let num = Math.floor(h*w*2.5 / (range * inputText.length)) ;
+    let num = Math.floor(h*w*2.5 / (range * inputText.length/5)) ;
     for (let i = 0; i <= num; i++) {
         inputText += inputText
     
