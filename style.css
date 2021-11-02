@@ -99,6 +99,11 @@ section{
 .go:hover{
     background-color: green;
 }
+.visits, .copyRight{
+    color: white;
+    background-color: black;
+    display: block;
+}
 @media(max-width:400px){
     .go{
         width: 20%;

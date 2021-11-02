@@ -70,3 +70,11 @@ document.body.addEventListener('click',(e)=>{
         textInput.style.height = '20px'
     }
 })
+
+let xhr = new XMLHttpRequest();
+xhr.open("GET", "https://api.countapi.xyz/hit/rumiani.github.io/visits");
+xhr.responseType = "json";
+xhr.onload = function() {
+    document.querySelector('.visits').innerHTML = `<span data-inner> visits: </span> <span>${this.response.value}</span>`;
+}
+xhr.send();
