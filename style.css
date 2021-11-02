@@ -43,7 +43,7 @@ body{
 .range{
     width: 150px;
     height: 50pxs;
-    color: red;
+    /* color: red; */
     /* margin: 20px 0; */
 }
 .rangNum{
@@ -99,11 +99,6 @@ section{
 .go:hover{
     background-color: green;
 }
-.visits, .copyRight{
-    color: white;
-    background-color: black;
-    display: block;
-}
 @media(max-width:400px){
     .go{
         width: 20%;
@@ -126,4 +121,31 @@ section{
     p{
         width: 95%;
     }
+}
+
+
+.footer{
+    background-color: black;
+    margin: 0 auto;
+    border-top: 1px white solid;
+    text-align: center;
+}
+a{
+    font-size: 50px;
+    text-decoration: none;
+}
+i{
+    /* background-color: rgb(71, 71, 192); */
+    color: rgb(71, 71, 192);
+    margin: 10px;
+}
+.visits, .copyRight{
+    color: white;
+    background-color: black;
+    display: block;
+}
+#followMe{
+    color: white !important;
+    background-color: black;
+    font-size: larger;
 }
