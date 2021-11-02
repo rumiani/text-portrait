@@ -6,7 +6,9 @@ let h = 600;
 let w = 400;
 document.querySelector('.rangNum').innerHTML =  document.querySelector('.range').value+' px'
 
-document.querySelector('.go').addEventListener('click',()=>{
+document.querySelector('.go').addEventListener('click',goHandler)
+
+function goHandler (){
   
     let inputText = document.querySelector('.inputText').value;
     inputText = inputText.trim()
@@ -37,11 +39,10 @@ document.querySelector('.go').addEventListener('click',()=>{
         if(inputText.length >num){
             output.innerHTML = inputText
             output.classList.add('build')
-            
                     return ;};;
             }
     
-});
+}
 document.querySelector('.range').addEventListener('change',()=>{
     let range = document.querySelector('.range').value
     document.querySelector('.rangNum').textContent = range+' px'
@@ -52,6 +53,7 @@ document.querySelector('.range').addEventListener('change',()=>{
     output.style.fontSize = `${range}px`
     console.log(range);
     console.log(output.innerHTML.length);
+    goHandler()
 })
 
 document.querySelector('.inputPic').addEventListener('change',()=>{
