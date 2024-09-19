@@ -1,151 +1,122 @@
-body{
-    margin:0;
-  }
-.input{
-    background-color: black;
-    text-align: center;
-    padding: 5px;
+body {
+  margin: 0;
+  background-color: black;
 }
-.choose{
-    margin: 0 auto;
-    /* background-color: red; */
-    width: 300px;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 5px;
-    position: relative;
+main {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+
 }
-.go{
-    cursor: pointer;
-    background-color: lightgreen;
-    height: 70px;
-    width: 50px;
-    border-radius: 5px;
-    position: absolute;
-    float: right;
-    top: 10px;
-    right: 5px;
-    transition: 0.5s;
-    text-align: center;
+.inputSection {
+  position: relative;
+  text-align: center;
+  padding: 5px;
 }
-.go:hover{
-    font-size: larger;
+.choose {
+  display: flex;
+  padding: 5px;
+  justify-content:space-between;
+  align-items:center;
 }
-.inputPic{
-    width: 180px;
-    cursor: pointer;
-    padding: 5px;
-    background-color: royalblue;
-    margin: 10px 0;
-    height: 30px;
-    border-radius: 5px;
+.go {
+  cursor: pointer;
+  background-color: lightgreen;
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+  transition: 0.5s;
+  text-align: center;
 }
-.range{
-    width: 150px;
-    height: 50pxs;
-    /* color: red; */
-    /* margin: 20px 0; */
+.go:hover {
+  font-size: larger;
 }
-.rangNum{
-    color: white;
-    
+.inputPic {
+  width: 180px;
+  cursor: pointer;
+  padding: 5px;
+  background-color: royalblue;
+  margin: 10px 0;
+  height: 30px;
+  border-radius: 5px;
 }
-.inputText{
-    resize: none;
-    margin: 0 auto;
-    width: 300px;
-    font-size: 18px;
-    height:20px;
-    transition: 1s;
+.range {
+  width: 100%;
+  background: red;
+  height: 50pxs;
+  /* color: red; */
+  /* margin: 20px 0; */
 }
-.inputText:focus{
-    box-shadow:2px 2px 2px blue;
-    border:none;
-    padding: 10px;
-    height: 200px !important;
+.rangNum {
+  color: white;
 }
-section{
-  height:600px;
+.inputText {
+  resize: none;
+  margin: 0 auto;
+  width: 100%;
+  font-size: 18px;
+  height: 20px;
+  transition: 1s;
+}
+.inputText:focus {
+  box-shadow: 2px 2px 2px blue;
+  border: none;
+  padding: 10px;
+  height: 200px !important;
+}
+section {
+  height: 600px;
   width: 100%;
   padding: 5px 0;
-  background:#000;
+  background: #000;
 }
-  p{
-    margin:0 auto;
-    /* position:absolute; */
-    top:0;
-    left:0;
-    font:" times new roman";
-    letter-spacing:-1px;
-    line-height:0.6em;
-    /* background-color: red; */
-    display: block;
-    /* font-size:20px; */
-    width: 400px;
-    height: 600px;
-    word-break: break-all;
-    text-align: center;
-    overflow:hidden;
-    background-position:center !important;
-    /* background: url('./canim.jpg') 100% 100% no-repeat; */
+.output {
+  margin: 0 auto;
+  font: " times new roman";
+  letter-spacing: -1px;
+  line-height: 0.6em;
+  /* display: block; */
+  width: 600px;
+  height: 600px;
+  word-break: break-all;
+  text-align: center;
+  overflow: hidden;
+  background-position: center !important;
 }
-.build{
-    background-size:contain cover !important;
-    -webkit-background-clip:text !important;
-    color:transparent !important;
-    filter:contrast(1) !important;
-    text-align:justify !important;
-  }
-.go:hover{
-    background-color: green;
+.build {
+  background-size: contain cover !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  filter: contrast(1) !important;
+  text-align: justify !important;
 }
-@media(max-width:400px){
-    .go{
-        width: 20%;
-    }
-    p{
-        width:95% ;
-    }
-    .inputText{
-        width: 90%;
-    }
-    .choose{
-        width: 95%;
-    }
-    .inputPic{
-        width: 70%;
-    }
-    .range{
-        width: 60%;
-    }
-    p{
-        width: 95%;
-    }
+.go:hover {
+  background-color: green;
 }
 
-
-.footer{
-    background-color: black;
-    margin: 0 auto;
-    border-top: 1px white solid;
-    text-align: center;
+.footer {
+  background-color: black;
+  margin: 0 auto;
+  border-top: 1px white solid;
+  text-align: center;
 }
-a{
-    font-size: 50px;
-    text-decoration: none;
+a {
+  font-size: 50px;
+  text-decoration: none;
 }
-i{
-    /* background-color: rgb(71, 71, 192); */
-    color: rgb(71, 71, 192);
-    margin: 10px;
+i {
+  /* background-color: rgb(71, 71, 192); */
+  color: rgb(71, 71, 192);
+  margin: 10px;
 }
-.visits, .copyRight{
-    color: white;
-    background-color: black;
-    display: block;
+.visits,
+.copyRight {
+  color: white;
+  background-color: black;
+  display: block;
 }
-#followMe{
-    color: white !important;
-    background-color: black;
-    font-size: larger;
+#followMe {
+  color: white !important;
+  background-color: black;
+  font-size: larger;
 }

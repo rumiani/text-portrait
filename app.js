@@ -1,80 +1,85 @@
-let output = document.querySelector('.output');
-let textInput = document.querySelector('.inputText')
-let choosePic = false
+let output = document.querySelector(".output");
+let textInput = document.querySelector(".inputText");
+let choosePic = false;
 let photo = new Image();
 let h = 600;
 let w = 400;
-document.querySelector('.rangNum').innerHTML =  document.querySelector('.range').value+' px'
+let rangeValue = document.querySelector(".range").value;
 
-document.querySelector('.go').addEventListener('click',goHandler)
+document.querySelector(".rangNum").innerHTML = rangeValue + " px";
 
-function goHandler (){
-  
-    let inputText = document.querySelector('.inputText').value;
-    inputText = inputText.trim()
-    
-    if(!choosePic) {
-        alert('You should choose photo from your device!')
-        document.querySelector('.inputPic').focus()
-        return;
+document.querySelector(".go").addEventListener("click", goHandler);
+
+function goHandler() {
+  let inputText = document.querySelector(".inputText").value;
+  inputText = inputText.trim();
+
+  if (!choosePic) return alert("You should choose photo from your device!");
+
+  if (inputText.length < 1) {
+    alert("You should enter some text");
+    textInput.value = "";
+    textInput.focus();
+    return;
+  }
+
+  if (!URL.createObjectURL(document.querySelector(".inputPic").files[0])) {
+    return alert("not ok");
+  }
+  let range = rangeValue;
+  output.style.fontSize = `${range}px`;
+
+  let num = Math.floor((h * w * 2.5) / ((range * inputText.length) / 5));
+  for (let i = 0; i <= num; i++) {
+    inputText += inputText;
+    if (inputText.length > num) {
+      output.innerHTML = inputText;
+      output.classList.add("build");
+      return;
     }
-    if(inputText.length<1) {
-        alert('You should enter a text')
-        textInput.value = ''
-        textInput.focus()
-        return;
-    }
+  }
+}
+document.querySelector(".range").addEventListener("change", () => {
+  let range = rangeValue;
+  document.querySelector(".rangNum").textContent = range + " px";
+  output.style.fontSize = `${range}px`;
+  goHandler();
+});
 
-    if(!URL.createObjectURL(document.querySelector('.inputPic').files[0])){
-        return alert('not ok')
-    }
-    let range = document.querySelector('.range').value
-    output.style.fontSize = `${range}px`
+document.querySelector(".inputPic").addEventListener("change", () => {
+  let src = URL.createObjectURL(document.querySelector(".inputPic").files[0]);
+  output.style.background = `url(${src}) 100% 100% / cover  no-repeat`;
+  document.querySelector(".inputPic").style.background = "green";
+  choosePic = true;
+});
+document.body.addEventListener("click", (e) => {
+  if (e.target.classList.contains("inputText")) {
+    textInput.style.height = "200px";
+  } else {
+    textInput.style.height = "20px";
+  }
+});
 
-    // output.classList.add('addBG')
-    let num = Math.floor(h*w*2.5 / (range * inputText.length/5)) ;
-    for (let i = 0; i <= num; i++) {
-        inputText += inputText
-    
-        if(inputText.length >num){
-            output.innerHTML = inputText
-            output.classList.add('build')
-                    return ;};;
-            }
+document.querySelector(".download-btn").addEventListener("click", function () {
+    if(!choosePic) return alert("Please select an image")
+  let captureArea = document.querySelector(".output");
+  domtoimage
+    .toPng(captureArea, {
+      width: captureArea.clientWidth,
+      height: captureArea.clientHeight,
+    })
+    .then(function (dataUrl) {
+      let link = document.createElement("a");
+      link.href = dataUrl;
+      link.download = "screenshot.png";
+      link.click();
+    })
+    .catch(function (error) {
+      console.error("oops, something went wrong!", error);
+    });
+});
+
+
+const validationHandler = () =>{
     
 }
-document.querySelector('.range').addEventListener('change',()=>{
-    let range = document.querySelector('.range').value
-    document.querySelector('.rangNum').textContent = range+' px'
-    let photo = new Image()
-    photo.src = 'https://rumiani.github.io/rumiani.png'
-    let h = photo.height
-    let w = photo.width
-    output.style.fontSize = `${range}px`
-    console.log(range);
-    console.log(output.innerHTML.length);
-    goHandler()
-})
-
-document.querySelector('.inputPic').addEventListener('change',()=>{
-    let src = URL.createObjectURL(document.querySelector('.inputPic').files[0]);
-    output.style.background = `url(${src}) 100% 100% / contain  no-repeat`
-document.querySelector('.inputPic').style.background = 'green'
-choosePic = true
-})
-document.body.addEventListener('click',(e)=>{
-    if(e.target.classList.contains('inputText')){
-        textInput.style.height = '200px'
-    }
-    else{
-        textInput.style.height = '20px'
-    }
-})
-
-let xhr = new XMLHttpRequest();
-xhr.open("GET", "https://api.countapi.xyz/hit/rumiani.github.io/visits");
-xhr.responseType = "json";
-xhr.onload = function() {
-    document.querySelector('.visits').innerHTML = `<span data-inner> visits: </span> <span>${this.response.value}</span>`;
-}
-xhr.send();

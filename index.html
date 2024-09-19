@@ -1,34 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Text-Portrait</title>
-</head>
-<body>
-    <div class="input">
+  </head>
+  <body>
+    <main>
+      <div class="inputSection">
         <div class="choose">
-            <input accept="image/*" type="file" class="inputPic" required>
-            <input class='range' type="range" class="range" title='Font Size (5-30 px)' min="5" max="30" > <span class="rangNum"></span>
-            <button class="go">Go</button>
+          <input accept="image/*" type="file" class="inputPic" required />
+          <button class="go">Go</button>
         </div>
-        <br>
-        <textarea placeholder="Enter a text here .." name="textarea" class="inputText" resize='none' id=""  required></textarea>
-    </div>
-    <section>
+        <textarea
+          placeholder="Enter a text here .."
+          name="textarea"
+          class="inputText"
+          resize="none"
+          id=""
+          required
+        ></textarea>
+      </div>
+      <input
+        class="range"
+        type="range"
+        class="range"
+        title="Font Size (5-30 px)"
+        min="5"
+        max="30"
+      />
+      <span class="rangNum"></span>
+      <section>
         <p class="output"></p>
-        
     </section>
-    <div class="footer">
-        <span id="followMe">Follow me:</span> <br>
-        <a href="https://twitter.com/Rumianian" target="_blank"><i class="fab fa-twitter-square"></i></a>
-        <a href="https://www.linkedin.com/in/rumiani/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <button class="download-btn">Download</button>
+      <div class="footer">
+        <span id="followMe">Follow me:</span> <br />
+        <a href="https://twitter.com/Rumianian" target="_blank"
+          ><i class="fab fa-twitter-square"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/rumiani/" target="_blank"
+          ><i class="fab fa-linkedin"></i
+        ></a>
         <span class="visits">...</span>
         <span class="copyRight">Rumiani © 2021</span>
-    </div>
+      </div>
+    </main>
     <script src="app.js"></script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+
+  </body>
 </html>
