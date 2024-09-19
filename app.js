@@ -4,7 +4,7 @@ let choosePic = false;
 let photo = new Image();
 let h = 600;
 let w = 400;
-let rangeValue = document.querySelector(".range").value;
+let rangeValue = 20;
 
 document.querySelector(".rangNum").innerHTML = rangeValue + " px";
 
@@ -40,9 +40,9 @@ function goHandler() {
   }
 }
 document.querySelector(".range").addEventListener("change", () => {
-  let range = rangeValue;
-  document.querySelector(".rangNum").textContent = range + " px";
-  output.style.fontSize = `${range}px`;
+  rangeValue = document.querySelector(".range").value;
+  document.querySelector(".rangNum").textContent = rangeValue + " px";
+  output.style.fontSize = `${rangeValue}px`;
   goHandler();
 });
 
@@ -61,7 +61,7 @@ document.body.addEventListener("click", (e) => {
 });
 
 document.querySelector(".download-btn").addEventListener("click", function () {
-    if(!choosePic) return alert("Please select an image")
+  if (!choosePic) return alert("Please select an image");
   let captureArea = document.querySelector(".output");
   domtoimage
     .toPng(captureArea, {
@@ -79,7 +79,4 @@ document.querySelector(".download-btn").addEventListener("click", function () {
     });
 });
 
-
-const validationHandler = () =>{
-    
-}
+const validationHandler = () => {};
