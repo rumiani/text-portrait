@@ -4,4 +4,4 @@ Text to portrait is a simple app built with vanilla js that converts your text t
 
 You can try it out here:
 
-![Text-Portrait](https://rumiani.github.io/text-portrait/)
+[Text-Portrait](https://rumiani.github.io/text-portrait/)
