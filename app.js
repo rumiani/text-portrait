@@ -71,7 +71,7 @@ document.querySelector(".download-btn").addEventListener("click", function () {
     .then(function (dataUrl) {
       let link = document.createElement("a");
       link.href = dataUrl;
-      link.download = "screenshot.png";
+      link.download = "text-portrait.png";
       link.click();
     })
     .catch(function (error) {
